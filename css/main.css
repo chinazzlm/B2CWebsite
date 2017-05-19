@@ -94,9 +94,18 @@
 	height: 35px;
 	background-color: #1369C0;
 	color: #FFF;
-	font
+	
 }
 .shopClass{
 	width: 190px;
 	line-height: 35px;
+	text-align: center;
+}
+.shopClass i{
+	width: 11px;
+	height: 7px;
+	overflow: hidden;
+	background: url("../images/icon/down.gif") left center no-repeat;
+	display: inline-block;
+	margin-left: 11px;
 }
