@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
+	<!--ie6支持PNG图片-->
+	<!--[if IE 6]>
+	<script type="text/javascript" src="js/js ie/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script type="text/javascript" src="js/js ie/ie6Fixpng.js"></script>
+	<![endif]-->
 	<meta charset="UTF-8">
 	<title>gangsta——中国最牛逼的黑市</title>
+	<script type="text/javascript" src="./js/addFavorite.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/reset.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
@@ -14,7 +20,7 @@
 		<div class="topBar">
 			<div class="comWidth">
 				<div class="leftArea">
-					<a href="#" class="collection">收藏慕课</a>
+					<a href="javascript:void(0)" class="collection" onclick="AddFavorite(window.location,document.title)">收藏gangsta</a>
 				</div>
 				<div class="rightArea">
 					欢迎来到gangsta！<a href="#">[登录]</a><a href="#">[免费注册]</a>
@@ -25,7 +31,7 @@
 		<div class="logoBar">
 			<div class="comWidth">
 				<div class="logo fl">
-					<a href="#"><img src="image/icon/imooc.png" alt="慕课网" /></a>
+					<a href="#"><img src="image/icon/imooc.png" alt="gangsta" /></a>
 				</div>
 				<div class="searchBox fl">
 					<input type="text" class="search_text fl"/>
@@ -46,7 +52,7 @@
 							<dt><a href="#" class="b">手机</a> <a href="#">数码</a> <a href="#" class="aLink">合约机</a></dt>
 							<dd><a href="#">荣耀3X</a> <a href="#">单反</a> <a href="#">智能设备</a></dd>
 						</dl>
-						<dl class="shopClass_item">
+						<dl class="shopClass_item shopClass_active">
 							<dt><a href="#" class="b">电脑</a> <a href="#">硬件外设</a> <a href="#" class="aLink">装机宝</a></dt>
 							<dd><a href="#">笔记本</a> <a href="#">台式机</a> <a href="#">超极本</a></dd>
 						</dl>	
@@ -63,7 +69,7 @@
 							<dd><a href="#">进口</a> <a href="#">方便面</a> <a href="#">零食</a> <a href="#">保健</a></dd>
 						</dl>					
 					</div>
-					<div class="shopClass_list">
+					<div class="shopClass_list hide">
 						<div class="shopClass_cont">
 							<dl class="shopList_item">
 								<dt>电脑整机</dt>
@@ -106,6 +112,222 @@
 				</ul>
 			</div>
 		</div>
-	</div>	 	
+	</div>
+
+	<!-- banner -->
+	<div class="banner comWidth clearfix">
+		<div class="banner_bar banner_big">
+			<ul class="imgBox">
+				<li><a href="#"><img src="./image/banner/1.png"></a></li>
+				<li><a href="#"><img src="./image/banner/2.png"></a></li>
+				<li><a href="#"><img src="./image/banner/3.png"></a></li>
+			</ul>
+			<div class="imgNum">
+				<a href="#" class="active"></a>
+				<a href="#"></a>
+				<a href="#"></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- 标题 1-->
+	<div class="shopTit comWidth">
+		<span class="icon"></span><h3>家用电脑</h3>
+		<a href="#" class="more">更多&gt;&gt;</a>
+	</div>
+
+	<!-- 商品列表 2-->
+	<div class="shopList comWidth clearfix">
+		<div class="leftArea">
+			<div class="banner_bar banner_sm">
+				<ul class="imgBox">
+					<li><a href="#"><img src="./image/banner/4.png"></a></li>
+					<li><a href="#"><img src="./image/banner/5.png"></a></li>
+				</ul>
+				<div class="imgNum">
+					<a href="#" class="active"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+				</div>
+			</div>
+		</div>
+		<div class="rightArea">
+			<!-- 上层图片 -->
+			<div class="shopList_top clearfix">
+				<div class="shop_item">
+					<div class="shop_img">
+						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
+					</div>
+					<h3>华为不要钱系列</h3>
+					<p>0元</p>
+				</div>
+				<div class="shop_item">
+					<div class="shop_img">
+						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
+					</div>
+					<h3>华为白送系列</h3>
+					<p>199元</p>
+				</div>
+				<div class="shop_item">
+					<div class="shop_img">
+						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
+					</div>
+					<h3>华为卖断货系列</h3>
+					<p>5988元</p>
+				</div>
+				<div class="shop_item">
+					<div class="shop_img">
+						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
+					</div>
+					<h3>华为纪念版系列</h3>
+					<p>6988元</p>
+				</div>
+			</div>
+			<!-- 下层图文 -->
+			<div class="shopList_sm clearfix">
+				<div class="shopItem_sm">
+					<div class="shopItem_smImg">
+						<a href=""><img src="./image/banner/10.png"></a>
+					</div>
+					<div class="shopItem_text">
+						<p>NFC技术一碰轻松配对！触摸屏幕</p>
+						<h3>￥149.00</h3>
+					</div>
+				</div>
+				<div class="shopItem_sm clearfix">
+					<div class="shopItem_smImg">
+						<a href=""><img src="./image/banner/10.2.png"></a>
+					</div>
+					<div class="shopItem_text">
+						<p>Samsung三星GALAXY Grand2</p>
+						<h3>￥2000.00</h3>
+					</div>
+				</div>
+				<div class="shopItem_sm clearfix">
+					<div class="shopItem_smImg">
+						<a href=""><img src="./image/banner/10.3.png"></a>
+					</div>
+					<div class="shopItem_text">
+						<p>全网低价 Apple苹果iPad mini1</p>
+						<h3>￥1889.00</h3>
+					</div>
+				</div>
+				<div class="shopItem_sm clearfix">
+					<div class="shopItem_smImg">
+						<a href=""><img src="./image/banner/10.4.png"></a>
+					</div>
+					<div class="shopItem_text">
+						<p>Apple苹果 全新Retina屏MacBook</p>
+						<h3>￥20020.00</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 标题 2-->
+	<div class="shopTit comWidth">
+		<span class="icon"></span><h3>电子器材</h3>
+		<a href="#" class="more">更多&gt;&gt;</a>
+	</div>
+
+	<!-- 商品列表 2-->
+	<div class="shopList comWidth clearfix">
+		<div class="leftArea">
+			<div class="banner_bar banner_sm">
+				<ul class="imgBox">
+					<li><a href="#"><img src="./image/banner/4.png"></a></li>
+					<li><a href="#"><img src="./image/banner/5.png"></a></li>
+				</ul>
+				<div class="imgNum">
+					<a href="#" class="active"></a>
+					<a href="#"></a>
+					<a href="#"></a>
+				</div>
+			</div>
+		</div>
+		<div class="rightArea">
+			<!-- 上层图片 -->
+			<div class="shopList_top clearfix">
+				<div class="shop_item">
+					<div class="shop_img">
+						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
+					</div>
+					<h3>华为不要钱系列</h3>
+					<p>0元</p>
+				</div>
+				<div class="shop_item">
+					<div class="shop_img">
+						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
+					</div>
+					<h3>华为白送系列</h3>
+					<p>199元</p>
+				</div>
+				<div class="shop_item">
+					<div class="shop_img">
+						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
+					</div>
+					<h3>华为卖断货系列</h3>
+					<p>5988元</p>
+				</div>
+				<div class="shop_item">
+					<div class="shop_img">
+						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
+					</div>
+					<h3>华为纪念版系列</h3>
+					<p>6988元</p>
+				</div>
+			</div>
+			<!-- 下层图文 -->
+			<div class="shopList_sm clearfix">
+				<div class="shopItem_sm">
+					<div class="shopItem_smImg">
+						<a href=""><img src="./image/banner/10.png"></a>
+					</div>
+					<div class="shopItem_text">
+						<p>NFC技术一碰轻松配对！触摸屏幕</p>
+						<h3>￥149.00</h3>
+					</div>
+				</div>
+				<div class="shopItem_sm clearfix">
+					<div class="shopItem_smImg">
+						<a href=""><img src="./image/banner/10.2.png"></a>
+					</div>
+					<div class="shopItem_text">
+						<p>Samsung三星GALAXY Grand2</p>
+						<h3>￥2000.00</h3>
+					</div>
+				</div>
+				<div class="shopItem_sm clearfix">
+					<div class="shopItem_smImg">
+						<a href=""><img src="./image/banner/10.3.png"></a>
+					</div>
+					<div class="shopItem_text">
+						<p>全网低价 Apple苹果iPad mini1</p>
+						<h3>￥1889.00</h3>
+					</div>
+				</div>
+				<div class="shopItem_sm clearfix">
+					<div class="shopItem_smImg">
+						<a href=""><img src="./image/banner/10.4.png"></a>
+					</div>
+					<div class="shopItem_text">
+						<p>Apple苹果 全新Retina屏MacBook</p>
+						<h3>￥20020.00</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 底部footer -->
+	<div class="footer">
+		<p><a href="#">gangsta简介</a><i>|</i><a href="#">gangsta公告</a><i>|</i><a href="#">招纳贤士</a><i>|</i><a href="#">联系我们</a><i>|</i><a href="#">客服热线：176-0218-3664</a></p>
+		<p>Copyright © 2008 - 2018 gangsta版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;哈尔滨市公安局道外分局备案编号：123456789123</p>
+		<p class="web">
+			<a href="#"><img src="./image/banner/11.png" alt="logo"></a>
+		</p>
+	</div>
+
 </body>
 </html>
