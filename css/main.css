@@ -128,7 +128,8 @@ li{
 
 /*产品详情y页面*/
 .hr_7{height: 7px;overflow: hidden;}
-.products .leftArea{width: 189.5px;}
+.products .leftArea{width: 189.5px;position: relative;}
+#productsLeft{position: absolute;top: 0;}
 .products .rightArea{width: 810px;}
 .products .banner_bar{float: none;}
 .products .item{width: 25%;margin-bottom: 10px;*width: 24.5%;}
