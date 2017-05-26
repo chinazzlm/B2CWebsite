@@ -46,12 +46,12 @@
 			// console.log(shopClass_show);
 			var productsLeft=document.getElementById('productsLeft'); //下方左侧菜单
 			addHander(shopClassI,"click",function(){
-				if(shopClass_show.style.display=="none"){
-					shopClass_show.style.display="block";
-					productsLeft.style.top="326px"; //一级菜单出现后下方上移
-				}else{
+				if(shopClass_show.style.display=="block"){
 					shopClass_show.style.display="none";
 					productsLeft.style.top="0px";
+				}else{
+					shopClass_show.style.display="block";
+					productsLeft.style.top="326px"; //一级菜单出现后下方上移
 				}
 			});
 
@@ -261,8 +261,8 @@
 			<div class="banner_bar banner_big">
 				<ul class="imgBox" id="imgBox">
 					<li><a href="#"><img src="./image/banner/1.png"></a></li>
-					<li><a href="#"><img src="./image/banner/2.png"></a></li>
-					<li><a href="#"><img src="./image/banner/3.png"></a></li>
+					<li><a href="#"><img src="./image/banner/banner2.jpg"></a></li>
+					<li><a href="#"><img src="./image/banner/banner3.jpg"></a></li>
 				</ul>
 				<div class="imgNum" id="imgNum">
 					<a href="#"></a>

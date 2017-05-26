@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<!--ie6支持PNG图片-->
+	<!--[if IE 6]>
+	<script type="text/javascript" src="js/js ie/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script type="text/javascript" src="js/js ie/ie6Fixpng.js"></script>
+	<![endif]-->
+	<meta charset="UTF-8">
+	<title>gangsta——最牛逼的产品分类</title>
+	<script type="text/javascript" src="./js/addFavorite.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript">
+		var imgBox,imgNum,timer;
+
+		window.onload=function(){
+			// let imgBox=document.getElementById("imgBox");
+			// let imgNum=document.getElementById('imgNum');
+			// let bannerNum=imgNum.getElementsByTagName('a');
+			
+			// // 开始轮播图
+			// timer=setInterval(function(){
+			// 	bannerChange(bannerNum,imgBox,num,810);
+			// },1500);
+			// // 鼠标移入改变轮播图
+			// for (var i = 0; i < bannerNum.length; i++) {
+			// 	bannerNum[i].index=i;
+			// 	bannerNum[i].onmouseover=function(){
+			// 		bannerChange(bannerNum,imgBox,this.index,810);
+			// 		clearInterval(timer); //停止计时器
+			// 	};
+			// 	bannerNum[i].onmouseout=function(){
+			// 		timer=setInterval(function(){ 移出鼠标后开始计时器
+			// 			bannerChange(bannerNum,imgBox,num,810);
+			// 		},1500);
+			// 	}
+			// }
+
+			//点击全部商品分类实现一级菜单伸缩
+			var shopClass=document.getElementById("shopClass");
+			var shopClassI=shopClass.getElementsByTagName('i')[0];
+			var shopClass_show=document.getElementById("shopClass_show");
+			// console.log(shopClassI);
+			// console.log(shopClass_show);
+			var productsLeft=document.getElementById('productsLeft'); //下方左侧菜单
+			addHander(shopClassI,"click",function(){
+				if(shopClass_show.style.display=="block"){
+					shopClass_show.style.display="none";
+					productsLeft.style.top="0px";
+				}else{
+					shopClass_show.style.display="block";
+					productsLeft.style.top="326px"; //一级菜单出现后下方上移
+				}
+			});	
+		}
+	</script>
+</head>
+
+<body>
+
+	<div class="headerBar">
+		<!-- 首条 -->
+		<div class="topBar">
+			<div class="comWidth">
+				<div class="leftArea">
+					<a href="javascript:void(0)" class="collection" onclick="AddFavorite(window.location,document.title)">收藏gangsta</a>
+				</div>
+				<div class="rightArea">
+					欢迎来到gangsta！<a href="#">[登录]</a><a href="#">[免费注册]</a>
+				</div>
+			</div>
+		</div>
+		<!-- logo条 -->
+		<div class="logoBar">
+			<div class="comWidth">
+				<div class="logo fl">
+					<a href="#"><img src="image/icon/imooc.png" alt="gangsta" /></a>
+				</div>
+				<div class="searchBox fl">
+					<input type="text" class="search_text fl"/>
+					<input type="button" value="搜 索" class="search_btn"/>
+				</div>
+				<div class="shopCar fr">
+					<span class="shopText fl">购物车</span>
+					<span class="shopNum fl">0</span>
+				</div>
+			</div>
+		</div>
+		<div class="navBox">
+			<div class="comWidth clearfix">
+				<div class="shopClass fl" id="shopClass">
+					<h3>全部商品分类<i></i></h3>
+					<div class="shopClass_show" id="shopClass_show">
+						<dl class="shopClass_item">
+							<dt><a href="#" class="b">手机</a> <a href="#">数码</a> <a href="#" class="aLink">合约机</a></dt>
+							<dd><a href="#">荣耀3X</a> <a href="#">单反</a> <a href="#">智能设备</a></dd>
+						</dl>
+						<dl class="shopClass_item shopClass_active">
+							<dt><a href="#" class="b">电脑</a> <a href="#">硬件外设</a> <a href="#" class="aLink">装机宝</a></dt>
+							<dd><a href="#">笔记本</a> <a href="#">台式机</a> <a href="#">超极本</a></dd>
+						</dl>	
+						<dl class="shopClass_item">
+							<dt><a href="#" class="b">大家电</a></dt>
+							<dd><a href="#">电视</a> <a href="#">空调</a> <a href="#">冰箱</a> <a href="#">洗衣机</a></dd>
+						</dl>		
+						<dl class="shopClass_item">
+							<dt><a href="#" class="b">厨房电器</a> <a href="#" class="b">生活电器</a></dt>
+							<dd><a href="#">空气净化器</a> <a href="#">微波炉</a> <a href="#">取暖设备</a></dd>
+						</dl>	
+						<dl class="shopClass_item">
+							<dt><a href="#" class="b">食品/饮料/生鲜</a> <a href="#" class="aLink">粮油</a></dt>
+							<dd><a href="#">进口</a> <a href="#">方便面</a> <a href="#">零食</a> <a href="#">保健</a></dd>
+						</dl>					
+					</div>
+					<div class="shopClass_list hide">
+						<div class="shopClass_cont">
+							<dl class="shopList_item">
+								<dt>电脑整机</dt>
+								<dd><a href="#">笔记本</a><a href="#">超极本</a><a href="#">上网本</a><a href="#">平板电脑</a><a href="#">台式机</a></dd>
+							</dl>
+							<dl class="shopList_item">
+								<dt>装机配件</dt>
+								<dd><a href="#">CPU</a><a href="#">硬盘</a><a href="#">SSD固态硬盘</a><a href="#">内存</a><a href="#">显示</a><a href="#">主板</a><a href="#">显卡</a><a href="#">机箱</a><a href="#">电源</a><a href="#">散热器</a><a href="#">刻录机/光驱</a><a href="#">声卡</a><a href="#">拓展卡</a><a href="#">服务器配件</a><a href="#">DIY小附件</a></dd>
+							</dl>
+							<dl class="shopList_item">
+								<dt>整机附件</dt>
+								<dd><a href="#">电脑包</a><a href="#">电脑桌</a><a href="#">电池</a><a href="#">电源适配器</a><a href="#">贴膜</a><a href="#">清洁用具</a><a href="#">笔记本散热器</a><a href="#">USB拓展</a><a href="#">平板配件</a><a href="#">特色附件</a><a href="#">影音线材</a></dd>
+							</dl>
+							<dl class="shopList_item">
+								<dt>电脑外设</dt>
+								<dd><a href="#">鼠标</a><a href="#">键盘</a><a href="#">游戏外设</a><a href="#">移动硬盘</a><a href="#">摄像头</a><a href="#">高清播放器</a><a href="#">外置盒</a><a href="#">移动硬盘包</a></dd>
+							</dl>				    	
+							<dl class="shopList_item">
+								<dt>网络设备</dt>
+								<dd><a href="#">路由器</a><a href="#">网卡</a><a href="#">交换机</a><a href="#">网络存储</a><a href="#">外置盒</a><a href="#">移动硬盘包</a><a href="#">布线工具</a><a href="#">网络配置</a></dd>
+							</dl>				    	
+							<dl class="shopList_item">
+								<dt>音频设备</dt>
+								<dd><a href="#">音箱</a><a href="#">耳麦</a><a href="#">声卡</a><a href="#">音频附件</a><a href="#">录音笔</a></dd>
+							</dl>
+							<div class="shopList_links">
+								<a href="#">电脑整机频道<span></span></a><a href="#">硬件/外设频道<span></span></a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<ul class="nav fl">
+					<li><a href="#" class="active">数码城</a></li>
+					<li><a href="#">枪械城</a></li>
+					<li><a href="#">团购</a></li>
+					<li><a href="#">发现</a></li>
+					<li><a href="#">二手特卖</a></li>
+					<li><a href="#">名品会</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 主题内容 -->
+	<div class="comWidth clearfix products">
+		<!-- 左侧导航条 -->
+		<div class="leftArea">
+			<div class="leftNav" id="productsLeft">
+				<h3 class="nav_title">手机|相册|数码</h3>
+				<div class="nav_cont vertical"> <!--vertical变为横向-->
+					<h3>手机通讯</h3>
+					<ul class="nav_cont_list clearfix"> 
+						<li><a href="#">全部收集</a></li>
+						<li><a href="#">1080P高清</a></li>
+						<li><a href="#">双卡双待</a></li>
+						<li><a href="#">拍照神器</a></li>
+						<li><a href="#">老年手机</a></li>
+						<li><a href="#">对讲机</a></li>
+						<li><a href="#">联通专区</a></li>
+					</ul>
+				</div>
+				<div class="nav_cont vertical"> <!--vertical变为横向-->
+					<h3>运营商</h3>
+					<ul class="nav_cont_list clearfix"> 
+						<li><a href="#">购机送费</a></li>
+						<li><a href="#">“0”元购机</a></li>
+						<li><a href="#">选好入网</a></li>
+						<li><a href="#">蚂蚁宝卡</a></li>
+					</ul>
+				</div>
+				<div class="nav_cont vertical"> <!--vertical变为横向-->
+					<h3>手机配件</h3>
+					<ul class="nav_cont_list clearfix"> 
+						<li><a href="#">手机电池</a></li>
+						<li><a href="#">蓝牙耳机</a></li>
+						<li><a href="#">充电器/数据线</a></li>
+						<li><a href="#">手机耳机</a></li>
+						<li><a href="#">钢化玻璃膜</a></li>
+						<li><a href="#">手机保护壳</a></li>
+						<li><a href="#">手机储存卡</a></li>
+						<li><a href="#">iphone配件</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- 右侧banner和下部商品 -->
+		<div class="rightArea">
+			<div class="screening_box">
+				<dl class="screening clearfix">
+					<dt>手机</dt>
+					<!-- <dd class="limit"><a class="active" href="#">不限</a></dd> -->
+					<dd class="screening_list">
+						<ul class="clearfix">
+							<li  style="width: 30%"><a href="#">裸机(773)</a></li>
+							<li style="width: 30%"><a href="#">合约机(192)</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="screening clearfix">
+					<dt>品牌</dt>
+					<dd class="limit"><a class="active" href="#">不限</a></dd>
+					<dd class="screening_list">
+						<ul class="clearfix">
+							<li><a href="#">Samsung/三星</a></li>
+							<li><a href="#">Apple/苹果</a></li>
+							<li><a href="#">Huawei/华为</a></li>
+							<li><a href="#">Miui/小米</a></li>
+							<li><a href="#">Lenovo/联想</a></li>
+							<li><a href="#">Sony/索尼</a></li>
+							<li><a href="#">Coolpad/酷派</a></li>
+							<li><a href="#">Bbk/步步高</a></li>
+							<li><a href="#">Oppo/欧珀</a></li>
+							<li><a href="#">Motorola/摩托罗拉</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="screening clearfix">
+					<dt>屏幕尺寸</dt>
+					<dd class="limit"><a class="active" href="#">不限</a></dd>
+					<dd class="screening_list">
+						<ul class="clearfix">
+							<li style="width: 30%"><a href="#">超大屏幕(>5.9英寸)</a></li>
+							<li style="width: 30%"><a href="#">大屏幕(4.8-5.8英寸)</a></li>
+							<li style="width: 30%"><a href="#">主流尺寸(4.0-4.7英寸)</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="screening clearfix">
+					<dt>操作系统</dt>
+					<dd class="limit"><a class="active" href="#">不限</a></dd>
+					<dd class="screening_list">
+						<ul class="clearfix">
+							<li><a href="#">android</a></li>
+							<li><a href="#">IOS</a></li>
+							<li><a href="#">windows</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="screening clearfix">
+					<dt>网络制式</dt>
+					<dd class="limit"><a class="active" href="#">不限</a></dd>
+					<dd class="screening_list">
+						<ul class="clearfix">
+							<li><a href="#">4G(TD-LTE)</a></li>
+							<li><a href="#">4G(FDD-LTE)</a></li>
+							<li><a href="#">3G(TD-SCDMA)</a></li>
+							<li><a href="#">3.5G(TD-HSDPA)</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="screening clearfix">
+					<dt>更多选项</dt>
+					<dd class="screening_list clearfix">
+						<div class="screen_more">
+							<a href="#">CPU核心数</a>
+						</div>
+						<div class="screen_more">
+							<a href="#">主摄像头像素</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+
+			<div class="hr_15"></div>
+
+			<!-- 下方手机及广告 -->
+			<div class="addInfo">
+				<div class="address">
+					<div class="fl" style="height: 32px;line-height: 31px;text-align: center;padding-left: 12px;padding-right: 6px;">送至</div>
+					<div class="select"> <!-- position：relative-->
+						<h3>海淀区五环内</h3>
+						<span></span>
+						<ul class="show_select"> <!--下啦菜单未完成-->
+							<li><a href="#">我家1</a></li>
+							<li><a href="#">我家2</a></li>
+							<li><a href="#">我家3</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="fr screen_text">
+					<span class="check">
+						<input type="checkbox" name="checkbox" id="check"><label for="check">仅显示有货</label>
+					</span>
+					<span class="shop_number">
+						共<em>1</em>件
+					</span>
+				</div>
+				
+			</div>
+
+
+			<div class="products_list screening_list_more clearfix">
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="./image/banner/12.png" alt="佳能相机"></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥699.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/13.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥2199.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/14.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥349.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>        	
+				<div class="item">
+					<div class="item_cont">
+						<div class="item_cont">
+							<div class="img_item">
+								<a href="#"><img src="image/banner/15.png" alt="玛尼玛尼哄" /></a>
+							</div>
+							<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+							<p class="money">￥6099.00</p>
+							<p><a href="#" class="addCar">加入购物车</a></p>
+						</div>
+					</div>
+				</div>  
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/16.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥699.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/17.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥2199.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/18.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥349.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>        	
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/19.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥6099.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div> 
+			</div>
+			<div class="hr_15"></div>
+
+
+			<div class="products_list clearfix">
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/20.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥699.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/21.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥2199.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/22.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥349.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>        	
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/23.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥6099.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>  
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/24.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥699.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/25.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥2199.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/26.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥349.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>        	
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="image/banner/27.png" alt="玛尼玛尼哄" /></a>
+						</div>
+						<p><a href="#">Canon佳能IXUS132数码相机 粉色(1600像素 2.7 LCD)</a></p>
+						<p class="money">￥6099.00</p>
+						<p><a href="#" class="addCar">加入购物车</a></p>
+					</div>
+				</div>           	
+			</div>
+			
+				
+			
+
+		</div>
+
+		<!-- 页码 -->
+		<div class="page">
+			<ul class="clearfix">
+				<li><a href="#">上一页</a></li>
+				<li><a href="#" class="show">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">6</a></li>
+				<li><a href="#">7</a></li>
+				<li><a href="#">8</a></li>
+				<li><span>...</span></li>
+				<li><a href="#">200</a></li>
+				<li><a href="#">下一页</a></li>
+				<li>共200页，到第<input type="text" name="pageTxt" placeholder="1" class="pageTxt">页
+				<input type="button" name="pageBtn" class="pageBtn" value="确定"></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- 底部footer -->
+	<div class="footer">
+		<p><a href="#">gangsta简介</a><i>|</i><a href="#">gangsta公告</a><i>|</i><a href="#">招纳贤士</a><i>|</i><a href="#">联系我们</a><i>|</i><a href="#">客服热线：176-0218-3664</a></p>
+		<p>Copyright © 2008 - 2018 gangsta版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;哈尔滨市公安局道外分局备案编号：123456789123</p>
+		<p class="web">
+			<a href="#"><img src="./image/banner/11.png" alt="logo"></a>
+		</p>
+	</div>
+
+</body>
+</html>
