@@ -127,6 +127,7 @@ li{
 
 
 /*产品详情y页面*/
+.hr_25{height: 25px;overflow: hidden;}
 .hr_7{height: 7px;overflow: hidden;}
 .products .leftArea{width: 189.5px;position: relative;}
 #productsLeft{position: absolute;top: 0;width: 189.5px;}
@@ -193,5 +194,20 @@ li{
 .page ul li{float: left;text-align: center;height: 26px;line-height: 26px;}
 .page ul li a{border: 1px #CCC solid;display: block;min-width: 31px;margin-right: 5px;padding: 0 5px;}
 .page ul li a:hover{background-color: #1D7AD9;color: #FFF;font-weight: bold;}
-.page .pageTxt{display: inline-block;width: 37px;height: 24px;overflow: hidden;line-height: 26px;text-align: center;border:#ccc 1px solid;margin: 0 5px;}
+.page .pageTxt{display: inline-block;width: 37px;height: 24px;overflow: hidden;line-height: 26px\9;text-align: center;border:#ccc 1px solid;margin: 0 5px;}
 .page .pageBtn{display: inline-block;width: 45px;height: 22px;border: 1px #C9C9C9 solid;background-color: #E8E8E8;cursor: pointer;}
+
+
+/*商品介绍页CSS*/
+.grey{background-color: #F0F0F0;}
+/*用户位置*/
+.userPosition{font-size: 12px;margin-top: 15px;margin-bottom: 15px;}
+.userPosition span{margin: 0 -5px;}
+.userPosition em{font-style: normal;}
+.userPosition a:hover{text-decoration:underline;color: red;font-weight: bold;}
+/*商品介绍*/
+.description_info{border: 1px solid #CCC;background-color: #FFFFFF;}
+.description .leftArea{float: left;width: 309px;}
+.description .rightArea{float:left;width: 688px;border-left: 1px solid #CCC; }
+/*图片展示*/
+.description_img .big{}

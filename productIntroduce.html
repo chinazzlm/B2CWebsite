@@ -18,25 +18,25 @@
 		window.onload=function(){
 			let imgBox=document.getElementById("imgBox");
 			let imgNum=document.getElementById('imgNum');
-			let bannerNum=imgNum.getElementsByTagName('a');
+			// let bannerNum=imgNum.getElementsByTagName('a');
 			
-			// 开始轮播图
-			timer=setInterval(function(){
-				bannerChange(bannerNum,imgBox,num,810);
-			},1500);
-			// 鼠标移入改变轮播图
-			for (var i = 0; i < bannerNum.length; i++) {
-				bannerNum[i].index=i;
-				bannerNum[i].onmouseover=function(){
-					bannerChange(bannerNum,imgBox,this.index,810);
-					clearInterval(timer); //停止计时器
-				};
-				bannerNum[i].onmouseout=function(){
-					timer=setInterval(function(){ //移出鼠标后开始计时器
-						bannerChange(bannerNum,imgBox,num,810);
-					},1500);
-				}
-			}
+			// // 开始轮播图
+			// timer=setInterval(function(){
+			// 	bannerChange(bannerNum,imgBox,num,810);
+			// },1500);
+			// // 鼠标移入改变轮播图
+			// for (var i = 0; i < bannerNum.length; i++) {
+			// 	bannerNum[i].index=i;
+			// 	bannerNum[i].onmouseover=function(){
+			// 		bannerChange(bannerNum,imgBox,this.index,810);
+			// 		clearInterval(timer); //停止计时器
+			// 	};
+			// 	bannerNum[i].onmouseout=function(){
+			// 		timer=setInterval(function(){ //移出鼠标后开始计时器
+			// 			bannerChange(bannerNum,imgBox,num,810);
+			// 		},1500);
+			// 	}
+			// }
 
 			//点击全部商品分类实现二级菜单伸缩
 			var shopClass=document.getElementById("shopClass");
@@ -55,7 +55,7 @@
 	</script>
 </head>
 
-<body>
+<body class="grey">
 
 	<div class="headerBar">
 		<!-- 首条 -->
@@ -158,215 +158,40 @@
 		</div>
 	</div>
 
-	<!-- banner -->
-	<div class="banner comWidth clearfix">
-		<div class="banner_bar banner_big">
-
-			<ul class="imgBox" id="imgBox">
-				<li><a href="#"><img src="./image/banner/1.png"></a></li>
-				<li><a href="#"><img src="./image/banner/banner2.jpg"></a></li>
-				<li><a href="#"><img src="./image/banner/banner3.jpg"></a></li>
-			</ul>
-
-			<div class="imgNum" id="imgNum">
-				<a href="#" class="active"></a>
-				<a href="#"></a>
-				<a href="#"></a>
-			</div>
-
-		</div>
+	<!-- 用户位置导航 -->
+	<div class="userPosition comWidth">
+		<strong style="font-weight: bold;"><a href="#">首页</a><span>&nbsp;&gt;&nbsp;</span></strong>
+		<a href="#">电脑</a><span>&nbsp;&gt;&nbsp;</span>
+		<a href="#">平板电脑</a><span>&nbsp;&gt;&nbsp;</span>
+		<a href="#">Apple/苹果</a><span>&nbsp;&gt;&nbsp;</span>
+		<em>iPad Air2</em>
 	</div>
 
-	<!-- 标题 1-->
-	<div class="shopTit comWidth">
-		<span class="icon"></span><h3>家用电脑</h3>
-		<a href="#" class="more">更多&gt;&gt;</a>
-	</div>
-
-	<!-- 商品列表 2-->
-	<div class="shopList comWidth clearfix">
-		<div class="leftArea">
-			<div class="banner_bar banner_sm">
-				<ul class="imgBox">
-					<li><a href="#"><img src="./image/banner/4.png"></a></li>
-					<li><a href="#"><img src="./image/banner/5.png"></a></li>
+	<!-- 商品介绍 -->
+	<div class="description_info comWidth" style="overflow:hidden;"> <!--overflow:hidden也可以清楚浮动-->
+		<div class="description">
+			<div class="leftArea">
+				<div class="description_img">
+					<div class="big">
+						<img src="./image/banner/ipad.png" alt="产品正面">	 
+						<!-- 准备谁用li里的<img src="">替换<div class="big">的innerHTML -->
+					</div>
+				</div>
+				<ul class="des_sming">
+					<li><a href="#"><img src="" alt="产品正面"></a></li>
+					<li><a href="#"><img src="" alt="产品背面"></a></li>
+					<li><a href="#"><img src="" alt="产品侧面"></a></li>
+					<li><a href="#"><img src="" alt="产品正反"></a></li>
+					<li><a href="#"><img src="" alt="产品实测"></a></li>
 				</ul>
-				<div class="imgNum">
-					<a href="#"></a>
-					<a href="#"></a>
-					<a href="#"></a>
-				</div>
 			</div>
-		</div>
-		<div class="rightArea">
-			<!-- 上层图片 -->
-			<div class="shopList_top clearfix">
-				<div class="shop_item">
-					<div class="shop_img">
-						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
-					</div>
-					<h3>华为不要钱系列</h3>
-					<p>0元</p>
-				</div>
-				<div class="shop_item">
-					<div class="shop_img">
-						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
-					</div>
-					<h3>华为白送系列</h3>
-					<p>199元</p>
-				</div>
-				<div class="shop_item">
-					<div class="shop_img">
-						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
-					</div>
-					<h3>华为卖断货系列</h3>
-					<p>5988元</p>
-				</div>
-				<div class="shop_item">
-					<div class="shop_img">
-						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
-					</div>
-					<h3>华为纪念版系列</h3>
-					<p>6988元</p>
-				</div>
-			</div>
-			<!-- 下层图文 -->
-			<div class="shopList_sm clearfix">
-				<div class="shopItem_sm">
-					<div class="shopItem_smImg">
-						<a href=""><img src="./image/banner/10.png"></a>
-					</div>
-					<div class="shopItem_text">
-						<p>NFC技术一碰轻松配对！触摸屏幕</p>
-						<h3>￥149.00</h3>
-					</div>
-				</div>
-				<div class="shopItem_sm clearfix">
-					<div class="shopItem_smImg">
-						<a href=""><img src="./image/banner/10.2.png"></a>
-					</div>
-					<div class="shopItem_text">
-						<p>Samsung三星GALAXY Grand2</p>
-						<h3>￥2000.00</h3>
-					</div>
-				</div>
-				<div class="shopItem_sm clearfix">
-					<div class="shopItem_smImg">
-						<a href=""><img src="./image/banner/10.3.png"></a>
-					</div>
-					<div class="shopItem_text">
-						<p>全网低价 Apple苹果iPad mini1</p>
-						<h3>￥1889.00</h3>
-					</div>
-				</div>
-				<div class="shopItem_sm clearfix">
-					<div class="shopItem_smImg">
-						<a href=""><img src="./image/banner/10.4.png"></a>
-					</div>
-					<div class="shopItem_text">
-						<p>Apple苹果 全新Retina屏MacBook</p>
-						<h3>￥20020.00</h3>
-					</div>
-				</div>
+			<div class="rightArea">
+				RIGHT
 			</div>
 		</div>
 	</div>
 
-	<!-- 标题 2-->
-	<div class="shopTit comWidth">
-		<span class="icon"></span><h3>电子器材</h3>
-		<a href="#" class="more">更多&gt;&gt;</a>
-	</div>
-
-	<!-- 商品列表 2-->
-	<div class="shopList comWidth clearfix">
-		<div class="leftArea">
-			<div class="banner_bar banner_sm">
-				<ul class="imgBox">
-					<li><a href="#"><img src="./image/banner/4.png"></a></li>
-					<li><a href="#"><img src="./image/banner/5.png"></a></li>
-				</ul>
-				<div class="imgNum">
-					<a href="#" class="active"></a>
-					<a href="#"></a>
-					<a href="#"></a>
-				</div>
-			</div>
-		</div>
-		<div class="rightArea">
-			<!-- 上层图片 -->
-			<div class="shopList_top clearfix">
-				<div class="shop_item">
-					<div class="shop_img">
-						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
-					</div>
-					<h3>华为不要钱系列</h3>
-					<p>0元</p>
-				</div>
-				<div class="shop_item">
-					<div class="shop_img">
-						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
-					</div>
-					<h3>华为白送系列</h3>
-					<p>199元</p>
-				</div>
-				<div class="shop_item">
-					<div class="shop_img">
-						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
-					</div>
-					<h3>华为卖断货系列</h3>
-					<p>5988元</p>
-				</div>
-				<div class="shop_item">
-					<div class="shop_img">
-						<a href="#"><img src="./image/banner/6.png" alt="华为不要钱系列"></a>
-					</div>
-					<h3>华为纪念版系列</h3>
-					<p>6988元</p>
-				</div>
-			</div>
-			<!-- 下层图文 -->
-			<div class="shopList_sm clearfix">
-				<div class="shopItem_sm">
-					<div class="shopItem_smImg">
-						<a href=""><img src="./image/banner/10.png"></a>
-					</div>
-					<div class="shopItem_text">
-						<p>NFC技术一碰轻松配对！触摸屏幕</p>
-						<h3>￥149.00</h3>
-					</div>
-				</div>
-				<div class="shopItem_sm clearfix">
-					<div class="shopItem_smImg">
-						<a href=""><img src="./image/banner/10.2.png"></a>
-					</div>
-					<div class="shopItem_text">
-						<p>Samsung三星GALAXY Grand2</p>
-						<h3>￥2000.00</h3>
-					</div>
-				</div>
-				<div class="shopItem_sm clearfix">
-					<div class="shopItem_smImg">
-						<a href=""><img src="./image/banner/10.3.png"></a>
-					</div>
-					<div class="shopItem_text">
-						<p>全网低价 Apple苹果iPad mini1</p>
-						<h3>￥1889.00</h3>
-					</div>
-				</div>
-				<div class="shopItem_sm clearfix">
-					<div class="shopItem_smImg">
-						<a href=""><img src="./image/banner/10.4.png"></a>
-					</div>
-					<div class="shopItem_text">
-						<p>Apple苹果 全新Retina屏MacBook</p>
-						<h3>￥20020.00</h3>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
+	<div class="hr_25"></div>
 	<!-- 底部footer -->
 	<div class="footer">
 		<p><a href="#">gangsta简介</a><i>|</i><a href="#">gangsta公告</a><i>|</i><a href="#">招纳贤士</a><i>|</i><a href="#">联系我们</a><i>|</i><a href="#">客服热线：176-0218-3664</a></p>

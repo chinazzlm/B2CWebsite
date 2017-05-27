@@ -9,3 +9,5 @@
 轮播图与一级菜单弹出完毕
 ### 2017/5/26 productCategories.html
 静态页面写完，js动态待定
+### 2017/5/27 productionIntroduce.html
+刚开始写 端午节出去玩了
