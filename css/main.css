@@ -210,4 +210,8 @@ li{
 .description .leftArea{float: left;width: 309px;}
 .description .rightArea{float:left;width: 688px;border-left: 1px solid #CCC; }
 /*图片展示*/
-.description_img .big{}
+.description_img .big{height: 340px;text-align: center;width: 266px;}
+.description_img .big img{height: 340px;width: 266px;}
+.des_sming{padding-left: 1px;width: 270px;margin: 0 auto;}
+.des_sming img{height: 52px;width: 52px;border: #CCC solid 1px;}
+.des_sming li{float: left;}

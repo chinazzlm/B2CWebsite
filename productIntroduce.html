@@ -42,15 +42,40 @@
 			var shopClass=document.getElementById("shopClass");
 			var shopClassI=shopClass.getElementsByTagName('i')[0];
 			var shopClass_show=document.getElementById("shopClass_show");
-			console.log(shopClassI);
-			console.log(shopClass_show);
+			// console.log(shopClassI);
+			// console.log(shopClass_show);
 			addHander(shopClassI,"click",function(){
 				if(shopClass_show.style.display=="none"){
 					shopClass_show.style.display="block";
 				}else{
 					shopClass_show.style.display="none";
 				}
-			})
+			});
+
+
+			// 点击切换展示图
+			var bigImg=document.getElementById("big");
+			var smallImg=document.getElementById("des_sming").getElementsByTagName("img");
+			for(var i=0;i<smallImg.length;i++){
+				// console.log(smallImg[i]);
+				smallImg[i].index=i;//初始化i;
+				smallImg[i].onmouseover=function(){
+					var imgSrc=this.src; //console.log(this.index);
+					//改变当前图片的地址
+					var imgTimer=setTimeout(function(){
+						bigImg.src=imgSrc;
+
+					},400);
+					//console.log(this.src); //file:///C:/Users/lilongji/B2CWebsite/image/banner/ipad5.jpg
+
+					//初始化所有img边框为空白， 然后这个边框变为#317EE7
+					for(var j=0;j<smallImg.length;j++){
+						smallImg[j].style.borderColor="#CCC";
+					}
+					this.style.border="#317EE7 1px solid";
+				}
+			}
+
 		}
 	</script>
 </head>
@@ -173,16 +198,16 @@
 			<div class="leftArea">
 				<div class="description_img">
 					<div class="big">
-						<img src="./image/banner/ipad.png" alt="产品正面">	 
-						<!-- 准备谁用li里的<img src="">替换<div class="big">的innerHTML -->
+						<img id="big" src="./image/banner/ipad1.jpg" alt="产品正面">	 
+						<!--li里的<img src="">替换<div class="big">的innerHTML  img.src-->
 					</div>
 				</div>
-				<ul class="des_sming">
-					<li><a href="#"><img src="" alt="产品正面"></a></li>
-					<li><a href="#"><img src="" alt="产品背面"></a></li>
-					<li><a href="#"><img src="" alt="产品侧面"></a></li>
-					<li><a href="#"><img src="" alt="产品正反"></a></li>
-					<li><a href="#"><img src="" alt="产品实测"></a></li>
+				<ul class="des_sming clearfix" id="des_sming">
+					<li><a href="javascript:void(0)"><img src="./image/banner/ipad1.jpg" alt="产品正面"></a></li>
+					<li><a href="javascript:void(0)"><img src="./image/banner/ipad2.jpg" alt="产品背面"></a></li>
+					<li><a href="javascript:void(0)"><img src="./image/banner/ipad3.jpg" alt="产品侧面"></a></li>
+					<li><a href="javascript:void(0)"><img src="./image/banner/ipad4.jpg" alt="产品正反"></a></li>
+					<li><a href="javascript:void(0)"><img src="./image/banner/ipad5.jpg" alt="产品实测"></a></li>
 				</ul>
 			</div>
 			<div class="rightArea">
