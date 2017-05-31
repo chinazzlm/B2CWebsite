@@ -215,3 +215,13 @@ li{
 .des_sming{padding-left: 1px;width: 270px;margin: 0 auto;}
 .des_sming img{height: 52px;width: 52px;border: #CCC solid 1px;}
 .des_sming li{float: left;}
+/*右侧展示区*/
+.des_content{padding: 0 10px;}
+.des_content .dl{margin-bottom: 10px;}
+.des_content h3{font-size: 16px;font-weight: bold;line-height: 22px;font-family: "Microsoft Yahei";padding: 13px 25px;}
+.des_content .dt{width: 75px;float: left;text-indent: 17px;line-height: 25px;}
+.des_content .dd{float: left;color: #666;}
+.des_money{font-size: 18px;color: #F30;font-weight: bold;font-family: Verdana;}
+.des_money em{font-style: normal;font-size: 12px;}
+.hg_icon{width: 55px;height: 18px;display: inline-block;line-height: 18px;background:url("../image/icon/hg_icon.jpg") left center no-repeat;color: #FFF;font-style: normal;text-indent: 16px;margin-right: 10px;}
+.hg {padding-top: 4px; display: inline-block;}
