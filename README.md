@@ -13,3 +13,5 @@
 刚开始写 端午节出去玩了
 ### 2017/5/31 productionIntroduce.html
 图片切换写完，明天把productionIntroduce.html写完
+### 2017/6/1 productionIntroduce.html 
+数量输入js写完 导航栏动画优化为淡入淡出

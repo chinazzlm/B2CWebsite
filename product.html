@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/fade.js"></script>
 	<script type="text/javascript">
 		var imgBox,imgNum,timer;
 
@@ -46,14 +47,21 @@
 			// console.log(shopClass_show);
 			var productsLeft=document.getElementById('productsLeft'); //下方左侧菜单
 			addHander(shopClassI,"click",function(){
-				if(shopClass_show.style.display=="block"){
-					shopClass_show.style.display="none";
-					productsLeft.style.top="0px";
+				if(shopClass_show.style.display=="block"){ //淡出
+					//shopClass_show.style.display="none";
+					fadeOut(shopClass_show,1000);
+					var fadeOutTimer=setTimeout(function(){
+						productsLeft.style.top="0px";
+					},1000);
 				}else{
-					shopClass_show.style.display="block";
-					productsLeft.style.top="326px"; //一级菜单出现后下方上移
+					//shopClass_show.style.display="block"; //淡入
+					//var height=parseInt(shopClass_show.style.height); //将字符串变为数字
+					fadeIn(shopClass_show,1000);
+					var fadeInTimer=setTimeout(function(){
+						productsLeft.style.top="326px"; //一级菜单出现后下方上移
+					},1000);
 				}
-			});
+			});	
 
 
 			

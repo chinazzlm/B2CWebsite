@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css"></link>
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/fade.js"></script>
 	<script type="text/javascript">
 		var imgBox,imgNum,timer;
 
@@ -38,19 +39,23 @@
 			// 	}
 			// }
 
-			//点击全部商品分类实现二级菜单伸缩
+
+			//点击全部商品分类实现一级菜单伸缩
 			var shopClass=document.getElementById("shopClass");
 			var shopClassI=shopClass.getElementsByTagName('i')[0];
 			var shopClass_show=document.getElementById("shopClass_show");
 			// console.log(shopClassI);
 			// console.log(shopClass_show);
 			addHander(shopClassI,"click",function(){
-				if(shopClass_show.style.display=="none"){
-					shopClass_show.style.display="block";
+				if(shopClass_show.style.display=="block"){ //淡出
+					//shopClass_show.style.display="none";
+					fadeOut(shopClass_show,1000);
 				}else{
-					shopClass_show.style.display="none";
+					//shopClass_show.style.display="block"; //淡入
+					//var height=parseInt(shopClass_show.style.height); //将字符串变为数字
+					fadeIn(shopClass_show,1000);
 				}
-			});
+			});	
 
 
 			// 点击切换展示图
@@ -75,6 +80,39 @@
 					this.style.border="#317EE7 1px solid";
 				}
 			}
+
+
+			//点击增加数量
+			var limitNum=parseInt(document.getElementById("limitNum").innerHTML);
+			var des_reduce=document.getElementById("des_reduce");
+			var buyNum=0; //借助flag来改变值
+			var des_number=document.getElementById("des_number");
+			var des_add=document.getElementById("des_add");
+			addHander(des_reduce,"click",function(){
+				buyNum--;
+				if(buyNum<0){
+					buyNum=0;
+					document.getElementById("des_number").value=buyNum;
+				}else{
+					document.getElementById("des_number").value=buyNum;
+				}
+			});
+			addHander(des_add,"click",function(){
+				buyNum++;
+				if(buyNum>=limitNum){
+					buyNum=limitNum;
+					document.getElementById("des_number").value=buyNum;
+				}else{
+					document.getElementById("des_number").value=buyNum;
+				}
+			});
+			addHander(des_number,"input",function(){
+				buyNum=parseInt(des_number.value);
+				console.log(buyNum);
+			});
+			addHander(des_number,"propertychange",function(){
+				buyNum=parseInt(des_number.value);
+			});
 
 		}
 	</script>
@@ -212,19 +250,98 @@
 			</div>
 			<div class="rightArea">
 				<div class="des_content">
-					<h3>全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后玫瑰金 MD531CH/A 玫瑰金白两色生
-产批次不同混合发货</h3>
+					<h3 class="txt">
+						全网底价 Apple 苹果 iPad mini 16G wifi版 平板电脑 前白后玫瑰金 MD531CH/A 玫瑰金白两色生产批次不同混合发货
+					</h3>
 					<div class="dl clearfix">
 						<div class="dt">黑市价</div>
-						<div class="dd"><span class="des_money"><em>￥</em>1999.00</span></div>
+						<div class="dd clearfix"><span class="des_money"><em>￥</em>1999.00</span></div>
 					</div>
 					<div class="dl clearfix">
 						<div class="dt">优惠</div>
-						<div class="dd">
+						<div class="dd clearfix">
 							<span class="hg"><i class="hg_icon">满购换</i>购ipad加价优惠够配件或USB充电插座</span>
 						</div>
 					</div>
+
+					<!-- 送货区域 -->
+					<div class="des_position">
+
+						<div class="dl clearfix">
+							<div class="dt">送到</div>
+							<div class="dd clearfix">
+								<div class="select">
+									<h3>海淀区五环内</h3><span></span>
+									<ul class="show_select">
+										<li>上帝</li>
+										<li>五道口</li>
+										<li>上帝</li>
+									</ul>
+								</div>
+								<span class="theGoods">有货，可当日出货</span>
+							</div>
+						</div>
+
+						<div class="dl clearfix">
+							<div class="dt colorSelect">选择颜色</div>
+							<div class="dd clearfix">
+								<div class="des_item des_item-active">
+									白色
+								</div>
+								<div class="des_item">
+									灰色
+								</div>
+								<div class="des_item">
+									黑色
+								</div>
+							</div>
+						</div>
+
+						<div class="dl clearfix">
+							<div class="dt colorSelect des_select_more">选择版本</div>
+							<div class="dd clearfix ">
+								<div class="des_item des_item-sm">
+									WIFI 16G
+								</div>
+								<div class="des_item des_item-sm">
+									WIFI 32G
+								</div>
+								<div class="des_item des_item-sm">
+									WIFI 64G
+								</div>
+								<div class="des_item des_item-active des_item-sm">
+									WIFI cellular 16G
+								</div>
+								<div class="des_item des_item-sm">
+									WIFI cellular 32G
+								</div>
+								<div class="des_item des_item-sm">
+									WIFI cellular 64G
+								</div>
+							</div>
+						</div>
+
+						<div class="dl clearfix">
+							<div class="dt" style="line-height: 32px;">数量</div>
+							<div class="dd clearfix">
+
+								<div class="des_number" style="overflow: hidden;">
+									<div class="reduce" id="des_reduce"></div>
+									<div class="des_input">
+										<input type="text" name="des_number" placeholder="整数" onkeyup="this.value=this.value.replace(/\D/g,'')" id="des_number" value="0">
+									</div>
+									<div class="add" id="des_add"></div>
+								</div>
+
+								<span class="xg">限购<em id="limitNum">2</em>件</span>
+							</div>
+						</div>
+
+					</div>
+
+
 				</div>
+
 			</div>
 		</div>
 	</div>

@@ -13,6 +13,7 @@ function AddFavorite(url,sTitle){
 }
 
 function SetHome(url){
+	var url=encodeURI(url);
 	if(document.all){
 		document.body.style.behavior ="url(#default#homepage)";
 		document.body.setHomePage(url);
