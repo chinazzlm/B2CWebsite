@@ -114,6 +114,75 @@
 				buyNum=parseInt(des_number.value);
 			});
 
+			// 点击选择类型
+			var des_item_big=document.getElementById("des_item-big").getElementsByTagName('div');
+			var des_item_sm=document.getElementById("des_item-sm").getElementsByTagName("div");
+			for(var i=0;i<des_item_big.length;i++){
+				addHander(des_item_big[i],"click",function(){
+					for(var i=0;i<des_item_big.length;i++){
+						// des_item_big[i].style.borderColor="#ccc";
+						des_item_big[i].className="des_item";
+					}
+					// this.style.borderColor="#317EE7";
+					this.className="des_item des_item-active";
+				})
+
+			};
+			for (var i = des_item_sm.length - 1; i >= 0; i--) {
+				addHander(des_item_sm[i],"click",function(){
+					for (var i = des_item_sm.length - 1; i >= 0; i--) {
+						// des_item_sm[i].style.borderColor="#ccc";
+						des_item_sm[i].className="des_item des_item-sm";
+					}
+					// this.style.borderColor="#317EE7";
+					this.className="des_item des_item-sm des_item-active";
+				})
+			}
+
+
+			document.getElementById("score_numNum").innerHTML=document.getElementById('commentScore').innerHTML;
+			document.getElementById("des_tit1").onclick=function () {
+				document.getElementById("info_txt").style.display="block";
+				document.getElementById("des_comment").style.display="none";
+				document.getElementById("des_tit1").className="active";
+				document.getElementById("des_tit2").className="";
+			}
+			document.getElementById("des_tit2").onclick=function () {
+				document.getElementById("info_txt").style.display="none";
+				document.getElementById("des_comment").style.display="block";
+				document.getElementById("des_tit2").className="active";
+				document.getElementById("des_tit1").className="";
+			}
+			
+
+			// 点击切换评价
+			var reviews=document.getElementById("review").getElementsByTagName("a");
+			
+			var commentLists=getByCls(document.getElementById("des_comment"),"commentList");
+			for(var i=0;i<reviews.length;i++){
+				reviews[i].index=i; //先让index与i相等
+				addHander(reviews[i],"click",function(){
+					for(var i=0;i<reviews.length;i++){
+						reviews[i].className="";
+						commentLists[i].style.display="none";
+					}
+					this.className="active";
+					commentLists[this.index].style.display="block";
+				})
+			}
+
+
+			//顶踩数字变换
+			var dingNumber=0,caiNumber=0;
+			addHander(document.getElementById("ding"),"click",function(){
+				dingNumber++;
+				document.getElementById("dingNum").innerHTML=dingNumber;
+			})
+			addHander(document.getElementById("cai"),"click",function(){
+				caiNumber++;
+				document.getElementById("caiNum").innerHTML=caiNumber;
+			})
+
 		}
 	</script>
 </head>
@@ -284,7 +353,7 @@
 
 						<div class="dl clearfix">
 							<div class="dt colorSelect">选择颜色</div>
-							<div class="dd clearfix">
+							<div class="dd clearfix" id="des_item-big">
 								<div class="des_item des_item-active">
 									白色
 								</div>
@@ -299,8 +368,8 @@
 
 						<div class="dl clearfix">
 							<div class="dt colorSelect des_select_more">选择版本</div>
-							<div class="dd clearfix ">
-								<div class="des_item des_item-sm">
+							<div class="dd clearfix " id="des_item-sm">
+								<div class="des_item des_item-sm des_item-active">
 									WIFI 16G
 								</div>
 								<div class="des_item des_item-sm">
@@ -309,7 +378,7 @@
 								<div class="des_item des_item-sm">
 									WIFI 64G
 								</div>
-								<div class="des_item des_item-active des_item-sm">
+								<div class="des_item des_item-sm">
 									WIFI cellular 16G
 								</div>
 								<div class="des_item des_item-sm">
@@ -339,10 +408,347 @@
 
 					</div>
 
+					<!-- 已选择 -->
+					<div class="des_select">
+						已选择 <span>“白色|WIFI 16G”</span>
+					</div>
+
+					<!-- 购物车 -->
+					<div class="shop_buy">
+						<a href="#" class="shopping_btn"></a>
+						<span class="line"></span>
+						<a href="#" class="buy_btn"></a>
+					</div>
+
+					<div class="notes">
+						注意：此商品可提供普通发票，不提供增值税发票。
+					</div>
 
 				</div>
 
 			</div>
+		</div>
+	</div>
+	<div class="hr_25"></div>
+
+	<div class="des_info comWidth clearfix">
+		<div class="leftArea">
+			<div class="recommend">
+				<h3 class="tit">同价位</h3>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="./image/banner/tongjiawei1.png" alt="Samsung"></a>
+						</div>
+						<p><a href="#">Samsung 三星 GALAXY WLAN版本 安卓系统手机</a></p>
+						<p class="money">￥3588.00</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="./image/banner/tongjiawei2.png" alt="Samsung"></a>
+						</div>
+						<p><a href="#">Samsung 三星 GALAXY Tab 3 8.0 WLAN版本 T310平板电话</a></p>
+						<p class="money">￥2599.00</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="./image/banner/tongjiawei3.png" alt="金立"></a>
+						</div>
+						<p><a href="#">Jinli 金立语音王 2 双开双待 安卓系统手机</a></p>
+						<p class="money">￥699.00</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="./image/banner/tongjiawei4.png" alt="金立"></a>
+						</div>
+						<p><a href="#">>Samsung 三星 GALAXY Tab 3 8.0 WLAN版本 T310平板电话</a></p>
+						<p class="money">￥2499.00</p>
+					</div>
+				</div>
+			</div>
+			<div class="recommend">
+				<h3 class="tit">最划算</h3>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="./image/banner/zuihuasuan1.png" alt="Ipad"></a>
+						</div>
+						<p><a href="#">Apple 苹果 iPaad mini 配备 Retina 显示屏 ME280CH/A</a></p>
+						<p class="money">￥3588.00</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="./image/banner/zuihuasuan2.png" alt="Mi"></a>
+						</div>
+						<p><a href="#">Mi2 小米2 配备 Retina 显示屏 IPS</a></p>
+						<p class="money">￥1299.00</p>
+					</div>
+				</div>
+				<div class="item">
+					<div class="item_cont">
+						<div class="img_item">
+							<a href="#"><img src="./image/banner/zuihuasuan3.png" alt="金立"></a>
+						</div>
+						<p><a href="#">Jinli 金立 配备 Retina 显示屏 IPS</a></p>
+						<p class="money">￥999.00</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="rightArea">
+			<!-- 导航栏 -->
+			<div class="des_infoContent">
+				<ul class="des_tit clearfix" id="des_tit">
+					<li class="active" id="des_tit1"><span>产品介绍</span></li>
+					<li id="des_tit2"><span>商品评价(<em>10235</em>)</span></li>
+				</ul>
+
+				<!-- 广告图 -->
+				<div class="ad">
+					<a href="#"><img src="./image/bannerAd.png" alt="广告图"></a>
+				</div>
+
+				<!-- 内容 -->
+				<div class="info_txt" id="info_txt">
+
+					<div class="info_tit clearfix">
+						<h3>强烈推荐</h3><h4>货比三家，还选</h4>
+					</div>
+					<p>
+						现在就是买mini的好时候！换代清仓直降，但苹果品质不变！A5双核，内置Lightning闪电接口，正反可插，方便人性。小身材，炫丽的7.9英寸显示屏，7.2mm的厚度，薄如铅笔。女生包包随身携带更时尚！facetime视频通话，与密友24小时畅聊不断线。微信倾力打造，你的智能助理。苹果的牌子就不用我说了，1111补仓，存货不多哦！
+					</p>
+
+					<div class="info_tit clearfix">
+						<h3>精美图片</h3>
+					</div>
+					<p>
+						苹果iPad7.9 英寸显示屏可带来新的iPad体验，绚丽的显示屏，在每一寸画面中呈现灵动鲜活的美妙影像。         
+						苹果miniMD528CH/A采用500 万像素 iSight 摄像头，清晰记录每一次的幸福。
+					</p>
+					<img src="./image/bannerInfo.png" alt="IPad">
+				</div>
+
+				<!-- 评价 -->
+				<div class="des_comment" id="des_comment">
+					<h3 class="shopDes_tit">商品评价</h3>
+					<div class="score_box clearfix">
+						<div class="score">
+							<span id="commentScore">4.7</span><em>分</em>
+						</div>
+						<div class="score_speed">
+							<ul class="score_speed_text clearfix">
+								<li><a href="javascript:void(0);">非常不满意</a></li>
+								<li><a href="javascript:void(0);">不满意</a></li>
+								<li><a href="javascript:void(0);">一般</a></li>
+								<li><a href="javascript:void(0);">满意</a></li>
+								<li><a href="javascript:void(0);">非常满意</a></li>
+							</ul>
+							<div class="score_num">
+								<span id="score_numNum"></span><i></i>
+							</div>
+							<p>共18939位干死他网友参与评分</p>
+						</div>
+					</div>
+					<div class="review_tab clearfix">
+						<ul class="review fl clearfix" id="review">
+							<li><a href="javascript:void(0);" class="active">全部</a></li>
+							<li><a href="javascript:void(0);">满意(<span>17490</span>)</a></li>
+							<li><a href="javascript:void(0);">一般(<span>549</span>)</a></li>
+							<li><a href="javascript:void(0);">不满意(<span>743</span>)</a></li>
+						</ul>
+						<div class="review_sort fr">
+							<a href="javascript:void(0);" class="review_time">时间排序</a>
+							<a href="javascript:void(0);" class="review_recommend">推荐排序</a>
+						</div>
+					</div>
+					<!-- 评价详情 -->
+					<div class="commentList" style="display: block;">
+						<div class="review_list clearfix">
+							<div class="review_userHeaf fl">
+								<div class="review_uesr">
+									<img src="./image/icon/user1.png" alt="user">
+									<p>61***42</p>
+									<p>黄金会员</p>
+								</div>
+							</div>
+							<div class="review_cont clearfix">
+								<div class="review_t clearfix">
+									<div class="starsBox fl">
+										<span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span>
+									</div>
+									<span class="fl">5分&nbsp;满意</span>
+								</div>
+								<p>不错不错到手就浪起来了</p>
+								<a href="javascript:void(0);" class="ding" id="ding">顶（<span id="dingNum">0</span>）</a>
+								<a href="javascript:void(0);" class="cai" id="cai">踩（<span id="caiNum">0</span>）</a>
+							</div>
+						</div>
+						<div class="review_list clearfix">
+							<div class="review_userHeaf fl">
+								<div class="review_uesr">
+									<img src="./image/icon/user2.png" alt="user">
+									<p>32***26</p>
+									<p>青铜会员</p>
+								</div>
+							</div>
+							<div class="review_cont clearfix">
+								<div class="review_t clearfix">
+									<div class="starsBox fl">
+										<span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span>
+									</div>
+									<span class="fl">5分&nbsp;满意</span>
+								</div>
+								<p>挺不错的，信赖gangsta</p>
+								<a href="#" class="ding" id="ding">顶（<span id="dingNum">0</span>）</a>
+								<a href="#" class="cai" id="cai">踩（<span id="caiNum">0</span>）</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="commentList">
+						<div class="review_list clearfix">
+							<div class="review_userHeaf fl">
+								<div class="review_uesr">
+									<img src="./image/icon/user1.png" alt="user">
+									<p>61***42</p>
+									<p>钻石会员</p>
+								</div>
+							</div>
+							<div class="review_cont clearfix">
+								<div class="review_t clearfix">
+									<div class="starsBox fl">
+										<span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span>
+									</div>
+									<span class="fl">5分&nbsp;满意</span>
+								</div>
+								<p>不错不错到手就浪起来了</p>
+								<a href="#" class="ding" id="ding">顶（<span id="dingNum">0</span>）</a>
+								<a href="#" class="cai" id="cai">踩（<span id="caiNum">0</span>）</a>
+							</div>
+						</div>
+						<div class="review_list clearfix">
+							<div class="review_userHeaf fl">
+								<div class="review_uesr">
+									<img src="./image/icon/user1.png" alt="user">
+									<p>32***26</p>
+									<p>青铜会员</p>
+								</div>
+							</div>
+							<div class="review_cont clearfix">
+								<div class="review_t clearfix">
+									<div class="starsBox fl">
+										<span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span>
+									</div>
+									<span class="fl">5分&nbsp;满意</span>
+								</div>
+								<p>挺不错的，李大大推荐的商品</p>
+								<a href="#" class="ding" id="ding">顶（<span id="dingNum">0</span>）</a>
+								<a href="#" class="cai" id="cai">踩（<span id="caiNum">0</span>）</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="commentList">
+						<div class="review_list clearfix">
+							<div class="review_userHeaf fl">
+								<div class="review_uesr">
+									<img src="./image/icon/user2.png" alt="user">
+									<p>61***42</p>
+									<p>垃圾会员</p>
+								</div>
+							</div>
+							<div class="review_cont clearfix">
+								<div class="review_t clearfix">
+									<div class="starsBox fl">
+										<span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span>
+									</div>
+									<span class="fl">5分&nbsp;满意</span>
+								</div>
+								<p>一般般吧</p>
+								<a href="#" class="ding" id="ding">顶（<span id="dingNum">0</span>）</a>
+								<a href="#" class="cai" id="cai">踩（<span id="caiNum">0</span>）</a>
+							</div>
+						</div>
+						<div class="review_list clearfix">
+							<div class="review_userHeaf fl">
+								<div class="review_uesr">
+									<img src="./image/icon/user2.png" alt="user">
+									<p>32***26</p>
+									<p>青铜会员</p>
+								</div>
+							</div>
+							<div class="review_cont clearfix">
+								<div class="review_t clearfix">
+									<div class="starsBox fl">
+										<span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span>
+									</div>
+									<span class="fl">5分&nbsp;满意</span>
+								</div>
+								<p>外观不错就是系统有点卡</p>
+								<a href="#" class="ding" id="ding">顶（<span id="dingNum">0</span>）</a>
+								<a href="#" class="cai" id="cai">踩（<span id="caiNum">0</span>）</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="commentList">
+						<div class="review_list clearfix">
+							<div class="review_userHeaf fl">
+								<div class="review_uesr">
+									<img src="./image/icon/user2.png" alt="user">
+									<p>61***42</p>
+									<p>白银会员</p>
+								</div>
+							</div>
+							<div class="review_cont clearfix">
+								<div class="review_t clearfix">
+									<div class="starsBox fl">
+										<span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span>
+									</div>
+									<span class="fl">5分&nbsp;满意</span>
+								</div>
+								<p>？？打开里面屏幕都碎了？不给赔付？</p>
+								<a href="#" class="ding" id="ding">顶（<span id="dingNum">0</span>）</a>
+								<a href="#" class="cai" id="cai">踩（<span id="caiNum">0</span>）</a>
+							</div>
+						</div>
+						<div class="review_list clearfix">
+							<div class="review_userHeaf fl">
+								<div class="review_uesr">
+									<img src="./image/icon/user1.png" alt="user">
+									<p>32***26</p>
+									<p>白金会员</p>
+								</div>
+							</div>
+							<div class="review_cont clearfix">
+								<div class="review_t clearfix">
+									<div class="starsBox fl">
+										<span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span><span class="stars"></span>
+									</div>
+									<span class="fl">5分&nbsp;满意</span>
+								</div>
+								<p>二手翻新机，别买</p>
+								<a href="#" class="ding" id="ding">顶（<span id="dingNum">0</span>）</a>
+								<a href="#" class="cai" id="cai">踩（<span id="caiNum">0</span>）</a>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+
 		</div>
 	</div>
 

@@ -30,3 +30,16 @@ function addHander(ele,type,handler){
 		ele['on'+type]=handler;
 	}
 }
+
+// 获取classname
+function getByCls(ele,clsname) {
+	var result=[];
+	ele=ele||document;
+	var eles=ele.getElementsByTagName('*')
+	for (var i = eles.length - 1; i >= 0; i--) {
+		if(eles[i].className==clsname){
+			result.push(eles[i]);
+		}
+	}
+	return result;
+}

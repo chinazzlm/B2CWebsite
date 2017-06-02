@@ -15,3 +15,5 @@
 图片切换写完，明天把productionIntroduce.html写完
 ### 2017/6/1 productionIntroduce.html 
 数量输入js写完 导航栏动画优化为淡入淡出
+### 2017/6/2 productionIntroduce.html 
+写完，js切换效果写完，全局导航栏还差一点
