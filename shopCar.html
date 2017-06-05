@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<!--ie6支持PNG图片-->
+	<!--[if IE 6]>
+	<script type="text/javascript" src="js/js ie/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script type="text/javascript" src="js/js ie/ie6Fixpng.js"></script>
+	<![endif]-->
+	<meta charset="UTF-8">
+	<title>gangsta——中国最牛逼的黑市</title>
+	<script type="text/javascript" src="./js/addFavorite.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/fade.js"></script>
+	<script type="text/javascript">
+		var imgBox,imgNum,timer;
+
+		window.onload=function(){
+			// let imgBox=document.getElementById("imgBox");
+			// let imgNum=document.getElementById('imgNum');
+			// let bannerNum=imgNum.getElementsByTagName('a');
+			
+			// // 开始轮播图
+			// timer=setInterval(function(){
+			// 	bannerChange(bannerNum,imgBox,num,810);
+			// },1500);
+			// // 鼠标移入改变轮播图
+			// for (var i = 0; i < bannerNum.length; i++) {
+			// 	bannerNum[i].index=i;
+			// 	bannerNum[i].onmouseover=function(){
+			// 		bannerChange(bannerNum,imgBox,this.index,810);
+			// 		clearInterval(timer); //停止计时器
+			// 	};
+			// 	bannerNum[i].onmouseout=function(){
+			// 		timer=setInterval(function(){ //移出鼠标后开始计时器
+			// 			bannerChange(bannerNum,imgBox,num,810);
+			// 		},1500);
+			// 	}
+			// }
+
+			//点击全部商品分类实现一级菜单伸缩
+			// var shopClass=document.getElementById("shopClass");
+			// var shopClassI=shopClass.getElementsByTagName('i')[0];
+			// var shopClass_show=document.getElementById("shopClass_show");
+			// // console.log(shopClassI);
+			// // console.log(shopClass_show);
+			// addHander(shopClassI,"click",function(){
+			// 	if(shopClass_show.style.display=="block"){ //淡出
+			// 		//shopClass_show.style.display="none";
+			// 		fadeOut(shopClass_show,1000);
+			// 	}else{
+			// 		//shopClass_show.style.display="block"; //淡入
+			// 		//var height=parseInt(shopClass_show.style.height); //将字符串变为数字
+			// 		fadeIn(shopClass_show,1000);
+			// 	}
+			// });	
+
+
+		}
+	</script>
+</head>
+
+<body>
+
+	<div class="headerBar">
+		<!-- 首条 -->
+		<div class="topBar">
+			<div class="comWidth">
+				<div class="leftArea">
+					<a href="javascript:void(0)" class="collection" onclick="AddFavorite(window.location,document.title)">收藏gangsta</a>
+				</div>
+				<div class="rightArea">
+					欢迎来到gangsta！<a href="#">[登录]</a><a href="#">[免费注册]</a>
+				</div>
+			</div>
+		</div>
+		<!-- logo条 -->
+		<div class="logoBar">
+			<div class="comWidth">
+				<div class="logo fl">
+					<a href="#"><img src="image/icon/imooc.png" alt="gangsta" /></a>
+				</div>
+				<div class="stepBox fr">
+					<div class="step"></div>
+					<ul class="step_text">
+						<li class="s01 active">我的购物车</li>
+						<li class="s02 active">填写核对订单</li>
+						<li class="s03">订单提交成功</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- 订单内容部分 -->
+	<div class="shoppingCat comWidth" id="shoppingCat">
+		<!-- 确认地址 -->
+		<div class="shopping_item">
+			<h3>收货地址</h3>
+			<div class="padding_shopping shopping_cont">
+				<ul class="shopping_list">
+					<li>
+						<span class="shopping_list_text"><em>*</em>选择地区</span>
+						<div class="select"> <!-- position：relative-->
+							<h3>海淀区五环内</h3>
+							<span></span>
+							<ul class="show_select"> <!--下啦菜单未完成-->
+								<li><a href="#">五道口</a></li>
+								<li><a href="#">东南海</a></li>
+								<li><a href="#">国务院</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<span class="shopping_list_text"><em>*</em>详细地址</span>
+						<input class="input input_b" type="text" name="addressChose"  placeholder="最多输入20个汉字">
+					</li>
+					<li>
+						<span class="shopping_list_text"><em>*</em>收 货 人</span>
+						<input class="input" type="text" name="addressChose"  placeholder="收货人姓名">
+					</li>
+					<li>
+						<span class="shopping_list_text"><em>*</em>手    机</span>
+						<input class="input" type="text" name="addressChose"  placeholder="手机号如：17602183664" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11">
+						&nbsp;或固定电话:<input type="text" class="input input_s" name="dianhua" placeholder="区号">&nbsp;-<input type="text" class="input" name="dianhua" placeholder="电话号码">&nbsp;-<input type="text" class="input" name="dianhua" placeholder="分机号(可选)">
+					</li>
+					<li><input type="button" name="confirmAddress" value="确认收货地址" class="confirmButton"></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 支付方式 -->
+		<div class="shopping_item">
+			<h3>付款方式</h3>
+			<div class="padding_shopping shopping_cont">
+				<form>
+					<ul class="shopping_list">
+						<li>
+							<input type="radio" class="radio" name="payment" id="r1">
+							<label for="r1">微信支付</label>用微信扫一扫就能支付！
+						</li>
+						<li>
+							<input type="radio" class="radio" name="payment" id="r2">
+							<label for="r2">支付宝支付</label>
+							蚂蚁花呗每周二8折折扣！
+						</li>
+						<li>
+							<input type="radio" class="radio" name="payment" id="r3">
+							<label for="r3">货到付款</label>支持货到付款啦！
+						</li>
+						<li><input type="button" name="confirmPayment" value="确认付款方式" class="confirmButton"></li>
+					</ul>
+				</form>
+			</div>
+		</div>
+
+		<!-- 送货清单 -->
+		<div class="shopping_item">
+		<h3 class="shopping_tit">送货清单<a href="#shoppingCat" class="backCar">返回购物车修改</a></h3>
+			<div class="shopping_cont pb_10">
+				<div class="cart_inner">
+					<div class="cart_head clearfix">
+						<div class="cart_item t_name">商品名称</div>
+						<div class="cart_item t_price">单价</div>
+						<div class="cart_item t_return">返现</div>
+						<div class="cart_item t_num">数量</div>
+						<div class="cart_item t_subtotal">小计</div>
+					</div>
+					<div class="cart_cont clearfix">
+						<div class="cart_item t_name">
+							<div class="cart_shopInfo clearfix">
+								<img src="images/des_sm.jpg" alt="">
+								<div class="cart_shopInfo_cont">
+									<p class="cart_link"><a href="#">微信支付微信支付微信支付微</a></p>
+									<p class="cart_info">微信支付微信支付微信支付微</p>
+								</div>
+							</div>
+						</div>
+						<div class="cart_item t_price">
+							asdfa
+						</div>
+						<div class="cart_item t_return">返现</div>
+						<div class="cart_item t_num">数量</div>
+						<div class="cart_item t_subtotal t_red">小计</div>
+					</div>
+					<div class="cart_message">
+						若有问题请留言，若有问题请留言
+					</div>
+					<div class="cart_prompt"><i class="cart_prompt_icon"></i>抱歉，一下商品无法购买。</div>
+					<div class="cart_cont cart_no_bor clearfix">
+						<div class="cart_item t_name">
+							<div class="cart_shopInfo clearfix">
+								<img src="images/des_sm.jpg" alt="">
+								<div class="cart_shopInfo_cont">
+									<p class="cart_link"><a href="#">微信支付微信支付微信支付微</a></p>
+									<p class="cart_info">微信支付微信支付微信支付微</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<div class="hr_25"></div>
+	<!-- 底部footer -->
+	<div class="footer">
+		<p><a href="#">gangsta简介</a><i>|</i><a href="#">gangsta公告</a><i>|</i><a href="#">招纳贤士</a><i>|</i><a href="#">联系我们</a><i>|</i><a href="#">客服热线：176-0218-3664</a></p>
+		<p>Copyright © 2008 - 2018 gangsta版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;哈尔滨市公安局道外分局备案编号：123456789123</p>
+		<p class="web">
+			<a href="#"><img src="./image/banner/11.png" alt="logo"></a>
+		</p>
+	</div>
+
+</body>
+</html>

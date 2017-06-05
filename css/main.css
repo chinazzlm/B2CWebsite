@@ -313,3 +313,28 @@ li{
 .review_t {height: 24px;padding-top: 5px;}
 .review_cont p{line-height: 30px;}
 .commentList{display: none;}
+
+/*购物车*/
+.stepBox{width: 396px;padding-top: 26px;}
+.step{background: url("../image/step.jpg") left top no-repeat;height: 19px;}
+.step_text{ color: #FFF;font-size: 12px;line-height: 30px;}
+.step_text .active{color: #F3E402;}
+.step_text li{float: left;}
+.s01,.s03{width: 30%;}
+.s02{width: 40%;text-align: center;}
+.s03{text-align: right;}
+
+/*订单内容区*/
+.shoppingCat{padding-top: 10px;}
+.shopping_list .select h3{background: none;line-height: 24px; height: 24px;font-size: 12px;}
+.shopping_item{border:1px #ccc solid;margin-bottom: 25px;}
+.shopping_item h3{height: 31px;line-height: 31px;background: #F3F3F3;font-size: 16px;color: #444444;text-indent: 12px;font-family: "Microsoft Yahei";}
+.padding_shopping{padding: 30px;}
+.shopping_list li{height: 24px;margin-bottom: 10px;}
+.shopping_list_text{float: left;width: 76px;line-height: 24px;}
+.shopping_list em{color: #F30;font-style: normal;margin-right: 5px;}
+.input{width:110px;height: 22px;border:#CCC solid 1px;padding:0 6px;}
+.input_b{width: 392px;}
+.input_s{width: 64px;}
+.confirmButton{width: 114px;height: 28px;display: inline-block;background-color: #4290FB;color: white;}
+.radio{position: relative;top: 3px;margin-right: 4px;}
