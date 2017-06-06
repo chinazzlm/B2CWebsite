@@ -57,6 +57,14 @@
 			// });	
 
 
+			// 获取订单价钱
+			let cart_money = parseInt(document.getElementById("cart_money").innerHTML);
+			let reduce_money=parseInt(document.getElementById("reduce_money").innerHTML);
+			let cart_num=parseInt(document.getElementById("cart_num").innerHTML);
+			let goodMoneyCont=(cart_money-reduce_money)*cart_num;
+			document.getElementById("goodMoney").innerHTML="<p>" + goodMoneyCont +"</p>";
+			document.getElementById("cart_rmb").getElementsByTagName('span')[0].innerHTML="<p>" + goodMoneyCont +"</p>";
+
 		}
 	</script>
 </head>
@@ -124,7 +132,7 @@
 					<li>
 						<span class="shopping_list_text"><em>*</em>手    机</span>
 						<input class="input" type="text" name="addressChose"  placeholder="手机号如：17602183664" onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="11">
-						&nbsp;或固定电话:<input type="text" class="input input_s" name="dianhua" placeholder="区号">&nbsp;-<input type="text" class="input" name="dianhua" placeholder="电话号码">&nbsp;-<input type="text" class="input" name="dianhua" placeholder="分机号(可选)">
+						<span class="input_tel">&nbsp;或固定电话:</span><input type="text" class="input input_s" name="dianhua" placeholder="区号">&nbsp;-<input type="text" class="input" name="dianhua" placeholder="电话号码">&nbsp;-<input type="text" class="input" name="dianhua" placeholder="分机号(可选)">
 					</li>
 					<li><input type="button" name="confirmAddress" value="确认收货地址" class="confirmButton"></li>
 				</ul>
@@ -156,9 +164,10 @@
 			</div>
 		</div>
 
+
 		<!-- 送货清单 -->
 		<div class="shopping_item">
-		<h3 class="shopping_tit">送货清单<a href="#shoppingCat" class="backCar">返回购物车修改</a></h3>
+			<h3 class="shopping_tit">送货清单<a href="#shoppingCat" class="backCar">返回购物车修改</a></h3>
 			<div class="shopping_cont pb_10">
 				<div class="cart_inner">
 					<div class="cart_head clearfix">
@@ -171,19 +180,19 @@
 					<div class="cart_cont clearfix">
 						<div class="cart_item t_name">
 							<div class="cart_shopInfo clearfix">
-								<img src="images/des_sm.jpg" alt="">
+								<img src="./image/des_sm1.jpg" alt="">
 								<div class="cart_shopInfo_cont">
-									<p class="cart_link"><a href="#">微信支付微信支付微信支付微</a></p>
-									<p class="cart_info">微信支付微信支付微信支付微</p>
+									<p class="cart_link"><a href="#">Hisense 海信 BCD-202D 202升 三门冰箱(银色)</a></p>
+									<p class="cart_info">[赠品] 保鲜盒 保鲜袋 海信冰洗赠品</p>
 								</div>
 							</div>
 						</div>
-						<div class="cart_item t_price">
-							asdfa
+						<div class="cart_item t_price" >
+							￥<span id="cart_money">1459.00</span>
 						</div>
-						<div class="cart_item t_return">返现</div>
-						<div class="cart_item t_num">数量</div>
-						<div class="cart_item t_subtotal t_red">小计</div>
+						<div class="cart_item t_return" >￥<span id="reduce_money">00</span></div>
+						<div class="cart_item t_num" id="cart_num">1</div>
+						<div class="cart_item t_subtotal t_red" id="goodMoney"></div>
 					</div>
 					<div class="cart_message">
 						若有问题请留言，若有问题请留言
@@ -192,10 +201,11 @@
 					<div class="cart_cont cart_no_bor clearfix">
 						<div class="cart_item t_name">
 							<div class="cart_shopInfo clearfix">
-								<img src="images/des_sm.jpg" alt="">
+								<img src="./image/des_sm2.jpg" alt="">
 								<div class="cart_shopInfo_cont">
-									<p class="cart_link"><a href="#">微信支付微信支付微信支付微</a></p>
-									<p class="cart_info">微信支付微信支付微信支付微</p>
+									<p class="cart_link" style="padding-top: -5px;"><a href="#">清风 欧院系列 100抽3曾纸巾</a></p>
+									<p class="cart_info">数量：1件</p>
+									<p class="cart_info" style="color: red;">￥4.90(无货)</p>
 								</div>
 							</div>
 						</div>
@@ -204,7 +214,18 @@
 			</div>
 		</div>
 
-
+		<!-- 订单结算 -->
+		<div class="shopping_item">
+			<h3>订单结算</h3>
+			<div class="padding_shopping shopping_cont clearfix">
+				<div class="cart_count">
+					<div class="cart_rmb" id="cart_rmb">
+						<i>总计：</i><span></span>
+					</div>
+					<input type="button" name="orderSubmit" value="提交订单">
+				</div>
+			</div>
+		</div>
 
 	</div>
 

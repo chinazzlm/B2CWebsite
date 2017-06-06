@@ -19,3 +19,5 @@
 写完，js切换效果写完，全局导航栏还差一点
 ### 2017/6/5 shopCar.html 
 写到送货清单，明天送完猫就继续写
+### 2017/6/6 shopCar.html  loading.html
+shopCar.html写完  loading.html开始写

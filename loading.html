@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<!--ie6支持PNG图片-->
+	<!--[if IE 6]>
+	<script type="text/javascript" src="js/js ie/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script type="text/javascript" src="js/js ie/ie6Fixpng.js"></script>
+	<![endif]-->
+	<meta charset="UTF-8">
+	<title>欢迎登陆gangsta</title>
+	<script type="text/javascript" src="./js/addFavorite.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"></link>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="./js/main.js"></script>
+	<script type="text/javascript" src="./js/fade.js"></script>
+	<script type="text/javascript">
+		var imgBox,imgNum,timer;
+		function check()
+		{
+
+			var email=document.getElementById("email").value;
+			if(email==""){
+				alert("电子邮件不能为空");
+				return false;
+			}
+			else{
+				reg=/^([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/gi;
+				if(!reg.test(email)){
+					alert("请输入正确的格式");
+					return false;
+				}
+			}
+		}
+	window.onload=function(){
+	}
+	</script>
+</head>
+
+<body>
+
+	<div class="headerBar">
+		<!-- 首条 -->
+		<div class="topBar">
+			<div class="comWidth">
+				<div class="leftArea">
+					<a href="javascript:void(0)" class="collection" onclick="AddFavorite(window.location,document.title)">收藏gangsta</a>
+				</div>
+				<div class="rightArea">
+					欢迎来到gangsta！<a href="#">[登录]</a><a href="#">[免费注册]</a>
+				</div>
+			</div>
+		</div>
+		<!-- logo条 -->
+		<div class="logoBar">
+			<div class="comWidth">
+				<div class="logo fl">
+					<a href="#"><img src="image/icon/imooc.png" alt="gangsta" /></a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- 登陆验证区 -->
+	<div class="loading">
+		<div class="loadingCont">
+			<!-- 账号验证 -->
+			<div class="passTxt">
+				<p>邮箱/用户名</p>
+				<input type="text" name="userName" placeholder="username@mail" id="email" onblur="check()">
+			</div>
+			<!-- 密码验证 -->
+			<div class="passTxt">
+				<p>密码(注意区分大小写)</p>
+				<input type="password" name="password">
+			</div>
+			<!-- 登陆选项 -->
+			<div class="loadingChoose">
+				<form>
+					<input type="radio" name="loading" id="autoLoading">
+					<label for="autoLoading">自动登录</label>
+					<input type="radio" name="loading" id="safeLoading">
+					<label for="safeLoading">安全控件登录</label>
+					<a href="#">忘记密码</a>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="hr_25"></div>
+	<!-- 底部footer -->
+	<div class="footer">
+		<p><a href="#">gangsta简介</a><i>|</i><a href="#">gangsta公告</a><i>|</i><a href="#">招纳贤士</a><i>|</i><a href="#">联系我们</a><i>|</i><a href="#">客服热线：176-0218-3664</a></p>
+		<p>Copyright © 2008 - 2018 gangsta版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;哈尔滨市公安局道外分局备案编号：123456789123</p>
+		<p class="web">
+			<a href="#"><img src="./image/banner/11.png" alt="logo"></a>
+		</p>
+	</div>
+
+</body>
+</html>
