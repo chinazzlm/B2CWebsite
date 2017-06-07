@@ -21,3 +21,5 @@
 写到送货清单，明天送完猫就继续写
 ### 2017/6/6 shopCar.html  loading.html
 shopCar.html写完  loading.html开始写
+### 2017/6/7 all
+全部完成

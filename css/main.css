@@ -389,3 +389,24 @@ li{
 .passTxt{margin-bottom: 15px;}
 .passTxt p{line-height: 20px;height: 20px;font-size: 14px;text-align: left;color: #999999;font-family: "Microsoft Yahei"}
 .passTxt input{height: 32px;line-height: 32px\9;border: 1px solid #CCCCCC;width:307px;}
+#username,#email{background: url("../image/icon/username.png") no-repeat 95% center;}
+#passwordonce,#password{background: url("../image/icon/password.png") no-repeat 95% center;}
+.loadin{width: 307px;line-height: 32px\9;margin-bottom: 20px;height: 32px;display:block;background:url("../image/icon/loadin.png") repeat-x left top;margin-top:16px;color:#606060;text-align: center;font-size: 16px;font-family: "Microsoft Yahei";}
+.loadingCont p{line-height: 13px;font-size: 12px;text-align: middle;color: #999999;}
+.loadingCont ul li{float: left;line-height: 13px;font-size: 12px;color: #000;margin-top: 10px;}
+.loadingCont ul li a:hover{color: red;text-decoration: underline;}
+.signBtn{display: block;position: relative;height: 31px;line-height: 31px;width: 115px;text-align: center;color: white;background-color: #7CBE56;border-radius: 4px;bottom: -31px;left: 305px;-ms-border-radius: 4px;-webkit-border-radius: 4px;-ms-border-radius: 4px;-moz-border-radius: 4px;-o-border-radius: 4px;}
+.signBtn:hover{color: red;font-weight: bold;}
+.logoTxt{padding-left: 25px;height: 38px;line-height: 85px;font-size: 20px;font-weight: bold;font-family: "Microsoft Yahei";color: white;vertical-align: middle;}
+
+
+/*注册页面*/
+.register{width: 630px;border: 1px solid #ccc;margin: 20px auto 42px auto;}
+.register>p{width:270px;line-height: 14px;margin:27px auto; }
+.registerBox{margin-top: 20px;vertical-align: middle;color: #999999;}
+.registerBox label{float: left;width: 210px;height: 31px;line-height: 31px;text-align: right;margin-right: 18px;}
+.registerBox label span{color: red;}
+.registerBox input{float: left;width: 270px;line-height: 29px\9;height: 29px;border: 1px solid #ccc;}
+.agree{width: 270px;margin-left: auto;margin-right: auto;}
+.agree a{color: #005AA0;}
+.agree a:hover{color: red;}

@@ -19,7 +19,7 @@
 		var imgBox,imgNum,timer;
 		function check()
 		{
-			var checkTxt=document.getElementById('loading').getElementsByTagName("p")[0];
+			var checkTxt=document.getElementById('register').getElementsByTagName("p")[0];
 			checkTxt.style.color="red";
 			checkTxt.style.fontSize="14px";
 			checkTxt.style.fontWeight="bolid";
@@ -30,20 +30,21 @@
 				checkTxt.innerHTML="电子邮件不能为空";
 				
 				return false;
-			}
-			else{
+			}else{
 				reg=/^([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\-|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/gi;
 				if(!reg.test(email)){
 					checkTxt.innerHTML="请输入正确的格式";
 					return false;
 				}
 			}
+
+			var adress=document.getElementById("adress");
+			if(!adress.checked){
+				checkTxt.innerHTML="同意用户协议才可加入我们";
+				return false;
+			}
 		}
 
-
-		function openUrl(){
-			window.open('register.html','','height=500,width=611,scrollbars=yes,status=yes')
-		}
 
 	</script>
 </head>
@@ -58,7 +59,7 @@
 					<a href="javascript:void(0)" class="collection" onclick="AddFavorite(window.location,document.title)">收藏gangsta</a>
 				</div>
 				<div class="rightArea">
-					欢迎来到gangsta！<a href="./loading.html" target="_blank">[登录]</a><a href="./register .html" target="_blank">[免费注册]</a>
+					欢迎来到gangsta！<a href="./loading.html" target="_blank">[登录]</a><a href="./register.html" target="_blank">[免费注册]</a>
 				</div>
 			</div>
 		</div>
@@ -69,55 +70,51 @@
 					<a href="#"><img src="image/icon/imooc.png" alt="gangsta" /></a>
 				</div>
 				<div class="fl">
-					<span class="logoTxt">欢迎登陆</span>
+					<span class="logoTxt">欢迎新人加入</span>
 				</div>
 			</div>
 		</div>
 
 	</div>
 
-	<!-- 登陆验证区 -->
-	<div class="loading" id="loading">
-		
-		<div class="loadingCont" id="loadingCont">
-			<p></p>
-			<!-- 账号验证 -->
-			<div class="passTxt">
-				<p>邮箱/用户名</p>
-				<input type="text" name="userName" placeholder="username@email.com" id="email">
+	<!-- 注册页面 -->
+	<div class="register" id="register">
+		<p></p>
+		<!-- 表单 -->
+		<form class="registerBox" action="没有服务器" method="post">
+			<div style="width: 100%;overflow: hidden;margin-bottom: 30px;">
+				<label for="username"><span>*</span>账户名</label>
+				<input type="text" name="username" id="username" placeholder="邮箱/用户名/手机号">	
 			</div>
-			<!-- 密码验证 -->
-			<div class="passTxt">
-				<p>密码(注意区分大小写)</p>
+			<div style="width: 100%;overflow: hidden;margin-bottom: 30px;">
+				<label for="password"><span>*</span>设置密码</label>
 				<input type="password" name="password" id="password">
 			</div>
-			<!-- 登陆选项 -->
-			<div class="loadingChoose">
-				<form method="post" action="没有服务器" name="chooseBox" id="chooseBox">
-					<input type="radio" name="loading" id="autoLoading">
-					<label for="autoLoading">自动登录</label>
-					<input type="radio" name="loading" id="safeLoading">
-					<label for="safeLoading">安全控件登录</label>
-					<a href="#">忘记密码</a>
-				</form>
+			<div style="width: 100%;overflow: hidden;margin-bottom: 30px;">
+				<label for="passwonce"><span>*</span>再次输入密码</label>
+				<input type="password" name="passwonce" id="passwordonce">
 			</div>
-			<input type="button" name="loadin" class="loadin" value="登陆" onclick="check()" >
-			<p>使用合作网站账号登陆</p>
-			<ul class="clearfix">
-				<li><a href="javascript:void(0)">QQ|</a></li>
-				<li><a href="javascript:void(0)">网易|</a></li>
-				<li><a href="javascript:void(0)">人人|</a></li>
-				<li><a href="javascript:void(0)">微博|</a></li>
-				<li><a href="javascript:void(0)">微信|</a></li>
-				<li><a href="javascript:void(0)">更多</a></li>
-			</ul>
+			<div style="width: 100%;overflow: hidden;margin-bottom: 30px;">
+				<label for="emal"><span>*</span>&nbsp;&nbsp;邮箱</label>
+				<input type="text" name="email" id="email">
+			</div>
+			<div style="width: 100%;overflow: hidden;margin-bottom: 50px;">
+				<label for="adress"><span>*</span>&nbsp;&nbsp;地址</label>
+				<input type="text" name="adress" id="adress">
+			</div>
+		</form>
+		<!-- 用户注册协议 -->
+		<div class="agree">
+			<input type="radio" name="userAgreement" id="userAgreement">
+			<label for="userAgreement">我已阅读并同意<a href="http://www.htdtv.cn/index.php?m=content&c=index&a=lists&catid=77">《用户注册协议》</a></label>
+			<input type="submit" name="agreeBtn" value="提交" style="width:270px;background:#E3E3E3;color: #606060;text-indent: center;font-size: 16px;margin-top: 35px;margin-bottom: 55px;" onclick="check()">
 		</div>
-		<input class="signBtn" value="马上注册>>" type="button" id="signBtn" onclick="openUrl()">
+
+
+
 	</div>
 
-	<div class="hr_25"></div>
-	<div class="hr_25"></div>
-	<div class="hr_25"></div>
+
 	<!-- 底部footer -->
 	<div class="footer">
 		<p><a href="#">gangsta简介</a><i>|</i><a href="#">gangsta公告</a><i>|</i><a href="#">招纳贤士</a><i>|</i><a href="#">联系我们</a><i>|</i><a href="#">客服热线：176-0218-3664</a></p>
